@@ -1,3 +1,5 @@
+import './cardImage.css'
+
 export const cardImage = () => {
     const cardDiv = document.createElement("div")
     cardDiv.classList.add("card-image")

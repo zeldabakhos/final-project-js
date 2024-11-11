@@ -1,14 +1,10 @@
 import { cardComponent } from "./components/cardComponent"
 import { cardImage } from "./components/cardImage"
+import { usersData } from "./components/usersData"
 import "./style.css"
 
-app.append(cardImage());
+const imageOne = cardComponent()
+imageOne.appendChild(cardImage())
+imageOne.appendChild(usersData())
 
-app.append(cardComponent())
-app.append(cardComponent())
-app.append(cardComponent())
-app.append(cardComponent())
-app.append(cardComponent())
-app.append(cardComponent())
-app.append(cardComponent())
-app.append(cardComponent())
+app.appendChild(imageOne)
