@@ -1,17 +1,21 @@
-import { cardComponent } from "./components/cardComponent"
-import { cardImage } from "./components/cardImage"
-import { usersActions } from "./components/userActions"
-import { usersData } from "./components/usersData"
-
 import { fetchUsers } from "./utils/fetchData"
+import { handleData } from "./utils/handleData"
 
 import "./style.css"
 
-fetchUsers()
+import { modalComp } from "./components/modalComp"
 
-const imageOne = cardComponent()
+
+app.appendChild(modalComp())
+const usersArray = await fetchUsers()
+// check if this is not an empty array
+if (usersArray.length) handleData(usersArray)
+//console.log(usersArray)
+
+/* const imageOne = cardComponent()
 imageOne.appendChild(cardImage())
 imageOne.appendChild(usersData())
 imageOne.appendChild(usersActions())
 
-app.appendChild(imageOne)
+app.appendChild(imageOne) */
+

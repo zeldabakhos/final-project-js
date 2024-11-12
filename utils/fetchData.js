@@ -4,7 +4,7 @@ export async function fetchUsers() {
 		const options = {
 			method: "GET",
 			headers: {
-				"x-api-key": "my_super_secret_phrase",
+				"x-api-key": import.meta.env.VITE_API_KEY,
 			},
 		}
 
@@ -12,7 +12,9 @@ export async function fetchUsers() {
 		if (!res.ok) throw new Error("Error with the connection")
 		const data = await res.json()
 		console.log(data)
+		return data
 	} catch (error) {
 		console.error(error)
+		return error
 	}
 }
