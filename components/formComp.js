@@ -25,11 +25,13 @@ export const formComp = (firstName, lastName, userId) => {
 	submitBtn.innerText = "Submit"
 
 	form.addEventListener("submit", async (e) => {
-		e.preventDefault()
+        
+        e.preventDefault()
 		const updatedFirstName = document.getElementById("firstName").value
 		const updatedLastName = document.getElementById("lastName").value
 		const response = await updateUser(updatedFirstName, updatedLastName, userId)
 		document.querySelector(".modal-overlay").classList.toggle("show")
+        console.log(response);
 		if (response.msg === "User updated") {
 			app.innerText = ""
 			const usersArray = await fetchUsers()

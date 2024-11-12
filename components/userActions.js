@@ -1,11 +1,11 @@
 import edit from '../assets/edit.svg'
 import trash from '../assets/trash.svg'
+import { init } from '../main'
 import { deleteUser } from '../utils/deleteUser'
 import { updateUser } from '../utils/updateUser'
 import { actionButton } from './actionButton'
 import { formComp } from './formComp'
 import './userActions.css'
-
 
 export const usersActions = () => {
 	const actionsContainer = document.createElement("div")
